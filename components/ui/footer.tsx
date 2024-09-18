@@ -2,6 +2,7 @@ import React from 'react'
 import { Magicbutton } from './magicbutton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { socialMedia } from '@/data'
+import { EnquiryForm } from './form'
 
 const Footer = () => {
   return (
@@ -14,13 +15,11 @@ const Footer = () => {
                 Ready to take <span className='text-purple'>your</span> digital presence to the next level?
             </h1>
             <p className='text-white-200 md:mt-10 my-5 text-center' >Reach out to me today and let's discuss how I can help you achieve your goals.</p>
-            <a href="mailto:avirajbhaliya03@gmail.com">
-                <Magicbutton
-                title="let's get in touch"
-                icon={<FaLocationArrow></FaLocationArrow>}
-                position="right"
-                />
-            </a>
+            <div className='w-[30vw]'>
+            <EnquiryForm></EnquiryForm>
+            </div>
+            
+          
         </div>
         <div className='flex mt-16 md:flex-row flex-col justify-between items-center'>
             <p className="md:text-base text-sm md:font-normal font-light">Copyright © 2024 Aviraj</p>
