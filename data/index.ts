@@ -1,7 +1,9 @@
+import { link } from "fs";
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
+    { name: "Experience", link: "#experience" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -173,6 +175,7 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link:"https://github.com/Aviraj0714"
     },
     {
       id: 2,
@@ -181,5 +184,6 @@ export const navItems = [
     {
       id: 3,
       img: "/link.svg",
+      link:"https://www.linkedin.com/in/aviraj-bhaliya-4483a7236"
     },
   ];

@@ -34,27 +34,25 @@ export function EnquiryForm() {
     const templateID = "template_092carl";
     const publicKey = "Gp0QKQzXUYe8gQzjH";
 
-    emailjs
-      .send(serviceID, templateID, data, publicKey)
-      .then(
-        (response) => {
-          console.log("Enquiry Submitted Successfully", response.status, response.text);
-          alert("Your enquiry has been sent successfully!");
-        },
-        (error) => {
-          console.error("Failed to send enquiry", error);
-          alert("Failed to send your enquiry, please try again.");
-        }
-      );
+    // Send form data via EmailJS
+    emailjs.send(serviceID, templateID, data, publicKey)
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Your enquiry has been sent successfully!");
+      })
+      .catch((error) => {
+        console.error("FAILED...", error);
+        alert("There was an error sending your enquiry. Please try again.");
+      });
 
     reset(); // Reset the form after submission
   };
 
   return (
-    <div className="max-w-lg border border-gray-300 mx-auto p-4 bg-white shadow-md rounded-md">
-      <h1 className="text-2xl font-bold text-center mb-6">
-        Enquiry <span className="text-purple-600">Form</span>
-      </h1>
+    <div className="max-w-lg border border-white-100 mx-auto p-4 bg-BLACK-100 shadow-md rounded-md">
+      <h1 className='heading lg:max-w-[30vw]:'>
+                Enquiry <span className='text-purple'>Form</span> 
+            </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Name */}
         <div>
@@ -124,11 +122,13 @@ export function EnquiryForm() {
 
         {/* Submit Button */}
         <div className="items-center flex flex-col">
-          <Magicbutton
-            title="Submit Enquiry"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
+          <button type="submit">
+            <Magicbutton
+              title="Send Enquiry"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </button>
         </div>
       </form>
     </div>

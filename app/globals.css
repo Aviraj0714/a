@@ -111,3 +111,19 @@
     @apply bg-background text-foreground;
   }
 }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%; 
+}
+@media (min-width: 1024px) {
+  .form-container {
+    max-width: 50%; }
+}
+
+form input, form textarea {
+  position: relative;
+  z-index: 10; /* Ensure inputs have a high z-index */
+}

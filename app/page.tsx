@@ -25,7 +25,6 @@ export default function Home() {
        <Recentproject></Recentproject>
        <Experience></Experience>
        <Approch></Approch>
-      
        <Footer></Footer>
       </div>
     </main>

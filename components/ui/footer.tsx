@@ -27,7 +27,15 @@ const Footer = () => {
 {socialMedia.map((profile)=>
 (
     <div key={profile.id} className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter background-blur-lg saturate-150 bg-opacity-70 bg-black-200 rounded-lg border border-black-300'>
+      <a
+              key={profile.id}
+              href={profile.link} // Link to the social media profile
+              target="_blank"   // Open in a new tab
+              rel="noopener noreferrer" // For security reasons
+              aria-label={profile.id} // Add an accessible label
+            > 
         <img src={profile.img} alt={profile.id} width={20} height={20} />
+        </a>
     </div>
 )
 )}
