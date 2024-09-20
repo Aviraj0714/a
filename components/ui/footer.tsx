@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { Magicbutton } from './magicbutton'
-import { FaLocationArrow } from 'react-icons/fa'
 import { socialMedia } from '@/data'
 import { EnquiryForm } from './form'
 
@@ -32,9 +31,9 @@ const Footer = () => {
               href={profile.link} // Link to the social media profile
               target="_blank"   // Open in a new tab
               rel="noopener noreferrer" // For security reasons
-              aria-label={profile.id} // Add an accessible label
+              aria-label={profile.id.toString()} // Add an accessible label
             > 
-        <img src={profile.img} alt={profile.id} width={20} height={20} />
+        <img src={profile.img} alt='a' width={20} height={20} />
         </a>
     </div>
 )

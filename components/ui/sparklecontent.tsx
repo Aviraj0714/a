@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
+import Image from "next/image"; // Import the Image component from next/image
 import { SparklesCore } from "../ui/sparkle";
 
 export function SparklesPreview() {
   return (
     <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <img src="/" className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-        
-      </img>
+      <Image
+        src="/" // Replace with your image path
+        alt="Description of the image" // Add an alt text for accessibility
+        className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20"
+        layout="intrinsic" // Choose a layout that suits your design (e.g., responsive)
+        width={800} // Set appropriate width
+        height={600} // Set appropriate height
+      />
       <div className="w-[40rem] h-40 relative">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />

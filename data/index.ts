@@ -154,6 +154,7 @@ export const navItems = [
       desc: "During my virtual internship, I successfully developed projects,showcasing my proficiency in web development. These projects demonstrated my ability to create innovative solutions while refining my coding and problem-solving skills",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
+      
     },
     {
       id: 3,

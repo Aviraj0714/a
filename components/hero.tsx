@@ -4,7 +4,7 @@ import {TextGenerateEffect} from'./ui/textgenrateffect'
 import { Magicbutton } from './ui/magicbutton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { Button } from './ui/movingborder'
-import { workExperience } from '@/data'
+
 
 
 
@@ -27,7 +27,7 @@ export const Hero = () => {
    
 <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center '>
 
-<h2 className='text-xs tracking-widest text-center max-w-80 text-blue-100 uppercase'>Aviraj's Portfolio</h2>
+<h2 className='text-xs tracking-widest text-center max-w-80 text-blue-100 uppercase'>Aviraj&#39;s Portfolio</h2>
 
 <TextGenerateEffect
 className='text-cente text-[40px] md:text-5xl lg:text-6xl '

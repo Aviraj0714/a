@@ -2,6 +2,7 @@ import { projects } from '@/data';
 import React from 'react';
 import { PinContainer } from './3d-pin';
 import { FaLocationArrow } from 'react-icons/fa';
+import Image from 'next/image'; // Import the Image component from next/image
 
 const Recentproject = () => {
   return (
@@ -12,13 +13,25 @@ const Recentproject = () => {
       </h1>
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map(({ id, title, des, img, iconLists, link }) => (
-          <div className='sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw] ' key={id}>
+          <div className='sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw]' key={id}>
             <PinContainer title={title} href={link}>
-              <div className='relative flex item-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
+              <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
-                  <img src='bg.png' alt='bg-img' />
+                  <Image
+                    src='/bg.png' // Replace with your background image path
+                    alt='Background Image'
+                    layout='fill'
+                    objectFit='cover' // Adjust object fit to cover
+                    className='absolute z-0'
+                  />
                 </div>
-                <img src={img} alt={title} className='z-10 absolute bottom-0' />
+                <Image
+                  src={img}
+                  alt={title}
+                  layout='fill'
+                  objectFit='contain' // Adjust object fit as needed
+                  className='z-10 absolute bottom-0'
+                />
               </div>
               <h1 className='font-bold lg:text-2xl text-base line-clamp-1'>{title}</h1>
               <p className='lg:text-xl lg:font-normal font-light text-sm line-clamp-2'>{des}</p>
@@ -30,13 +43,19 @@ const Recentproject = () => {
                       className='border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center'
                       style={{ transform: `translateX(-${5 * index * 2}px)` }}
                     >
-                      <img src={icon} alt={icon} className='p-2' />
+                      <Image
+                        src={icon}
+                        alt={`Icon ${index}`}
+                        width={32} // Set appropriate width
+                        height={32} // Set appropriate height
+                        className='p-2'
+                      />
                     </div>
                   ))}
                 </div>
                 <div className='flex justify-center items-center'>
-      <p className='text-sm flex lg:text-xl text-purple md:text-xs '>Check live site</p>
-<FaLocationArrow className=' ms-2 color="#CBACF9'></FaLocationArrow>
+                  <p className='text-sm flex lg:text-xl text-purple md:text-xs'>Check live site</p>
+                  <FaLocationArrow className='ms-2' color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>
