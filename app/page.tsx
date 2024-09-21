@@ -11,10 +11,16 @@ import Recentproject from '@/components/ui/recentproject';
 import { navItems } from '@/data';
 
 const Loading = () => (
-  <div className="loader invert flex justify-center items-center h-screen ">
-   <div data-glitch="" className="glitch"><img src="/aviraj-logo.png" alt="" /></div>
-</div>
+  <div className="loader flex flex-col justify-center items-center h-screen relative">
+    <div data-glitch="" className="glitch invert">
+      <img src="/aviraj-logo.png" alt="Aviraj Logo" />
+    </div>
+    <div data-glitch="Loading..." className="glitch mt-4">
+      Loading...
+    </div>
+  </div>
 );
+
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
