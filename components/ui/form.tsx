@@ -7,6 +7,7 @@ import { z } from "zod";
 import { Magicbutton } from "./magicbutton";
 import { FaLocationArrow } from "react-icons/fa";
 import emailjs from "emailjs-com"; // Import EmailJS
+import { useState } from "react"; // Import useState
 
 // Zod schema for validation
 const EnquirySchema = z.object({
@@ -28,8 +29,9 @@ export function EnquiryForm() {
     resolver: zodResolver(EnquirySchema),
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission state
+
   const onSubmit = (data: EnquiryFormValues) => {
-    // Sending data through EmailJS
     const serviceID = "service_uf0pxsn";
     const templateID = "template_092carl";
     const publicKey = "Gp0QKQzXUYe8gQzjH";
@@ -38,7 +40,7 @@ export function EnquiryForm() {
     emailjs.send(serviceID, templateID, data, publicKey)
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
-        alert("Your enquiry has been sent successfully!");
+        setIsSubmitted(true); // Set submitted state to true on success
       })
       .catch((error) => {
         console.error("FAILED...", error);
@@ -48,11 +50,28 @@ export function EnquiryForm() {
     reset(); // Reset the form after submission
   };
 
+  if (isSubmitted) {
+    // Success screen
+    return (
+      <div className="max-w-lg mx-auto p-4 bg-green-100 text-center shadow-md rounded-md">
+        <h1 className="text-2xl font-bold mb-4">Thank You!</h1>
+        <p className="text-lg mb-4">Your enquiry has been sent successfully. We will get back to you soon.</p>
+        <button 
+          onClick={() => setIsSubmitted(false)} // Reset to allow another enquiry
+          className="px-4 py-2 bg-purple-600 text-white rounded"
+        >
+          Send Another Enquiry
+        </button>
+      </div>
+    );
+  }
+
+  // Enquiry form
   return (
     <div className="max-w-lg border border-white-100 mx-auto p-4 bg-BLACK-100 shadow-md rounded-md">
       <h1 className='heading lg:max-w-[30vw]:'>
-                Enquiry <span className='text-purple'>Form</span> 
-            </h1>
+        Enquiry <span className='text-purple'>Form</span> 
+      </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Name */}
         <div>
