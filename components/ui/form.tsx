@@ -53,15 +53,27 @@ export function EnquiryForm() {
   if (isSubmitted) {
     // Success screen
     return (
-      <div className="max-w-lg mx-auto p-4 bg-green-100 text-center shadow-md rounded-md">
+      <div className="max-w-lg mx-auto p-4 border-2 bg-black-100 text-center shadow-md rounded-md">
         <h1 className="text-2xl font-bold mb-4">Thank You!</h1>
         <p className="text-lg mb-4">Your enquiry has been sent successfully. We will get back to you soon.</p>
         <button 
-          onClick={() => setIsSubmitted(false)} // Reset to allow another enquiry
-          className="px-4 py-2 bg-purple-600 text-white rounded"
-        >
-          Send Another Enquiry
-        </button>
+  onClick={() => setIsSubmitted(false)} // Reset to allow another enquiry
+  className="
+    px-3 py-2 bg-purple-600 text-white rounded 
+    text-base w-full max-w-xs mx-auto 
+    sm:px-4 sm:py-3 sm:text-lg
+    md:max-w-sm md:px-6
+    transition-transform transform hover:scale-105
+  "
+>
+  <Magicbutton
+    title="Send another Enquiry"
+    icon={<FaLocationArrow />}
+    position="right"
+  />
+</button>
+
+
       </div>
     );
   }
