@@ -66,18 +66,7 @@ const Home = () => {
 
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      {/* Audio element with ref */}
-      <audio ref={audioRef} src="/welcome-sound.mp3" preload="auto" />
-
-      {/* Stop button */}
-      <button
-        onClick={stopSound}
-        className="absolute top-5 left-5 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-700 transition"
-      >
-        Stop Sound
-      </button>
-
-      <div className="max-w-7xl w-full">
+         <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
