@@ -22,9 +22,28 @@ const Loading = () => (
 );
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate a delay or fetching process with useEffect
+  useEffect(() => {
+    // Set a timeout to remove the loading screen after some time (e.g., 2 seconds)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust this timeout duration to control the preloader time
+
+    // Clean up the timer
+    return () => clearTimeout(timer);
+  }, []);
+
+  // If loading, show the preloader
+  if (loading) {
+    return <Loading />;
+  }
+
+  // Otherwise, show the main content
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-         <div className="max-w-7xl w-full">
+      <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
