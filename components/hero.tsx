@@ -49,7 +49,7 @@ words="Transforming Concepts into seamless experiences"
 </div>
 
 <p className='tet-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl pt-5 '>Hi,I am Aviraj Bhaliya, a Web Developer</p>
-<a href="https://drive.google.com/file/d/11wqVs8j8ubMDMAaXKueLNJ409tSUZwzR/view?usp=sharing">
+<a href="https://drive.google.com/file/d/1RDRzVOWCEicrS0eD8cBF_oiacMBOxjYr/view?usp=sharing">
   <Magicbutton
               title="Resume" icon={<FaLocationArrow></FaLocationArrow>} position='right'/>
 </a>
