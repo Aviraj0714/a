@@ -94,7 +94,7 @@ export const navItems = [
       des: "A dynamic eCommerce shopping site built with HTML, CSS, and JavaScript, offering a smooth and responsive user experience for browsing and purchasing products.",
       img: "/Screenshot (294).png",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "https://github.com/Aviraj0714/E-commerce-shopping-website.git",
+      link: "https://hashopping.netlify.app/",
     },
     {
       id: 4,
