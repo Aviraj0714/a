@@ -102,7 +102,7 @@ export const navItems = [
       des: "A modern restaurant website built with HTML, CSS, and JavaScript, featuring an intuitive design, menu showcase, and interactive user experience.",
       img: "/Screenshot (296).png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-      link: "https://github.com/Aviraj0714/hotel-website.git",
+      link: "https://luxeresturant.netlify.app/",
     },
   ];
   
