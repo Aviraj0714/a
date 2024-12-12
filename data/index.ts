@@ -86,7 +86,7 @@ export const navItems = [
       des: "A comprehensive home rental system built with the MERN stack, offering seamless property listings, bookings, and management for users.",
       img: "/Screenshot (226).png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-      link: "https://github.com/Aviraj0714/Propertease.git",
+      link: "https://properteasehomerent.netlify.app/",
     },
     {
       id: 3,
